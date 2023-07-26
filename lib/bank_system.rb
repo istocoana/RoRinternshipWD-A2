@@ -1,14 +1,17 @@
+require_relative 'bank_account'
+require_relative 'user'
+
 class BankSystem
-  attr_reader :accounts #reader bcs you don't have to sett them
+  attr_reader :accounts
 
   def initialize()
-    @accounts = [] #accounts is a array list
+    @accounts = [] 
   end
 
-  def create_account(name, job, email, adress)
-    account = BankAccount.new(name, job, email, adress)
-    @accounts << account #
-    puts "Account for #{name} created successfully."
+  def create_account(user)
+    account = BankAccount.new(user)
+    @accounts << account 
+    puts "Account for #{user.name} created successfully."
     account
   end
 end
