@@ -5,7 +5,7 @@ RSpec.describe User do
   
   let(:user) { User.new('John Doe', 'Software Engineer', 'john.doe@example.com', '123 Main St', '') }
 
-  describe '#set_pin' do
+  describe '#pin' do
     it 'sets the PIN successfully when given a valid 4-digit PIN' do
       valid_pin = '1111'
       expect(user.set_pin(valid_pin)).to eq(true)

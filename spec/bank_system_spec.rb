@@ -13,9 +13,10 @@ RSpec.describe BankSystem do
 
   describe '#create_account' do
     it 'adds a new account to the accounts list' do
-      expect(BankAccount).to receive(:new).with(User).and_return(User)
-      bank_system.create_account(User)
-      expect(bank_system.accounts).to include(User)
+      user_instance = instance_double(User, name: 'John Doe')
+      expect(BankAccount).to receive(:new).with(user_instance).and_return(user_instance)
+      bank_system.create_account(user_instance)
+      expect(bank_system.accounts).to include(user_instance)
     end
   end
 end
